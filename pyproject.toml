@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "h4fci"
+version = "1.0.0"
+description = "Self-contained Hartree-Fock + full-CI program for H4+"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.20",
+    "scipy>=1.7",
+]
+
+[project.scripts]
+h4-fci = "h4fci.cli:main"
+
+[tool.setuptools]
+packages = ["h4fci"]
+
+[tool.setuptools.package-data]
+h4fci = ["data/*.nwchem", "data/*.json"]

@@ -1,0 +1,74 @@
+{
+  "note": "pyscf 参考值，仅用于对比。本程序运行时不导入、不依赖 pyscf。",
+  "pyscf_version": "2.15.0",
+  "geometry": "square D4h, side 2.0 bohr (H at (+-1,+-1,0) bohr)",
+  "bases": {
+    "STO-3G": {
+      "norb": 4,
+      "ndet": 24,
+      "E_rohf": -1.582321070129,
+      "E_uhf": -1.593315578972,
+      "s2_uhf": 0.7761528204,
+      "E_fci": [
+        -1.627425978564,
+        -1.627425978564,
+        -1.354755881848
+      ]
+    },
+    "CC-PVDZ": {
+      "norb": 20,
+      "ndet": 3800,
+      "E_rohf": -1.663203301852,
+      "E_uhf": -1.671164511328,
+      "s2_uhf": 0.7696304693,
+      "E_fci": [
+        -1.726034706047,
+        -1.726034706045,
+        -1.45682848348
+      ]
+    },
+    "CC-PVTZ": {
+      "norb": 56,
+      "ndet": 86240,
+      "E_rohf": -1.668548936816,
+      "E_uhf": -1.67672628094,
+      "s2_uhf": 0.7701340918,
+      "E_fci": [
+        -1.736654859759,
+        -1.736654859757,
+        -1.46541010714
+      ]
+    }
+  },
+  "timing_8threads": {
+    "note": "refdata 生成时（8 线程）",
+    "STO-3G": {
+      "integrals": 0.002,
+      "rohf": 0.142,
+      "uhf": 0.021,
+      "fci": 0.002
+    },
+    "cc-pVDZ": {
+      "fci": 0.21
+    },
+    "cc-pVTZ": {
+      "integrals": 0.048,
+      "rohf": 0.12,
+      "uhf": 0.07,
+      "fci": 108.0,
+      "total": 110.7
+    }
+  },
+  "timing_20threads_pyscf_path": {
+    "note": "同一台机器 20 线程。pyscf 提供积分+SCF，FCI 用 pyscf 的 direct_spin1。total 为各阶段之和（48.1 s）；另一次对照运行里还额外花了 47 s 在 pyscf 上重算一遍 FCI 用于交叉验证，那部分不计入。",
+    "cc-pVTZ": {
+      "integrals": 0.1,
+      "rohf": 0.2,
+      "uhf": 0.1,
+      "mo_transform": 0.2,
+      "fci_setup": 0.5,
+      "fci": 47.0,
+      "total": 48.1
+    }
+  }
+}
