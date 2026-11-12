@@ -151,3 +151,7 @@ McMurchie–Davidson：Hermite 展开系数 + Boys 函数的导数（把 `dⁿF�
   参考一致到 4×10⁻¹³）；STO-3G 因 4 个轨道里 3 个近简并，需阻尼且能量比参考
   高 7×10⁻⁷ Ha。FCI 与轨道选择无关，最终结果不受影响。
 * `cache/` 可以随时删除，只是省去重新计算积分的时间。
+
+## License
+
+MIT — see [LICENSE](LICENSE).
